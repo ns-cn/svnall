@@ -9,7 +9,7 @@ import (
 )
 
 var cmdUpdate = &goter.Command{
-	&cobra.Command{
+	Cmd: &cobra.Command{
 		Use:   "update",
 		Short: "tool to update multi svn repositories",
 		Run: func(cmd *cobra.Command, args []string) {
