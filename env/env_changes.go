@@ -11,6 +11,6 @@ var (
 
 // merge使用的环境变量
 var (
-	Targets = goter.NewCmdFlagStringSlice([]string{}, "target", "t", "目标分支")
+	Targets = goter.NewCmdFlagStringSlice([]string{}, "targets", "t", "目标分支")
 	Preview = goter.NewCmdFlagBool(true, "preview", "p", "是否预览所有的变更，否则直接提交")
 )

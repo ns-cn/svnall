@@ -12,7 +12,7 @@ import (
 var cmdChanges = &goter.Command{
 	Cmd: &cobra.Command{
 		Use:     "changes",
-		Aliases: []string{"l"},
+		Aliases: []string{"list", "l"},
 		Short:   "查询变更",
 		Long: `功能： 【查询svn提交记录的文件变更】
 必要参数：源分支branch(b)、版本范围（last(l)或revision(r)）
