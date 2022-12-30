@@ -30,7 +30,12 @@ func SvnUpdate(dir string) bool {
 	if err != nil || !stat.IsDir() {
 		return false
 	}
-	fmt.Printf("svn update in:%s\n", dir)
+	if env.ShowURL.Value {
+		information := Info(dir)
+		fmt.Printf("svn update in:%s (%s)\n", dir, information.URL)
+	} else {
+		fmt.Printf("svn update in:%s\n", dir)
+	}
 	command := exec.Command("svn", "update")
 	command.Dir = dir
 	command.Stdin = os.Stdin

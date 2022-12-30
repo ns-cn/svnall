@@ -42,6 +42,7 @@ func Info(dir string) Information {
 	svnInfo.Stderr = &errBuffer
 	err := svnInfo.Run()
 	var urlRelative = ""
+	var url = ""
 	if err == nil {
 		for {
 			readBytes, readErr := outBuffer.ReadBytes('\n')
@@ -49,6 +50,9 @@ func Info(dir string) Information {
 				break
 			}
 			line := (string)(readBytes)
+			if strings.HasPrefix(line, constants.H_URL) {
+				url = line[len(constants.H_URL) : len(line)-1]
+			}
 			if strings.HasPrefix(line, constants.H_RELATIVE_URL) {
 				urlRelative = line[len(constants.H_RELATIVE_URL) : len(line)-1]
 				break
@@ -58,5 +62,5 @@ func Info(dir string) Information {
 			}
 		}
 	}
-	return Information{UrlRelative: urlRelative}
+	return Information{UrlRelative: urlRelative, URL: url}
 }

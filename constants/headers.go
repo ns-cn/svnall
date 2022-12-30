@@ -41,4 +41,5 @@ Last Changed Date: 2003-01-16 23:21:19 -0600 (Thu, 16 Jan 2003)
 const (
 	H_RELATIVE_URL    = "Relative URL: ^"
 	H_RELATIVE_URL_CN = "正确的相对 URL: ^"
+	H_URL             = "URL: "
 )

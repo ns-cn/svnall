@@ -25,6 +25,7 @@ var (
 	Depth       = goter.NewCmdFlagInt(-1, "Depth", "d", "the Depth searching in dir(不指定则使用环境变量：SVNALL_DEPTH，默认值2)")
 	Exclude     = goter.NewCmdFlagBool(false, "exclude", "e", "是否排除环境变量配置仓库,默认不排除（环境变量：SVNALL_REPOSITORIES）")
 	FullThrough = goter.NewCmdFlagBool(false, "through", "t", "是否已经找到.svn继续往下查找，默认不继续往下")
+	ShowURL     = goter.NewCmdFlagBool(true, "showurl", "u", "是否显示仓库的完整URL")
 )
 
 func InitEnv(args []string) (repositories []Repository, err error) {
